@@ -1,0 +1,55 @@
+I first heard about this internship this morning (Sunday the 30th), I
+immediately set to work on the challenge question. I had always wanted to make
+a terminal-based card game, and I thought this may have been the perfect opportunity.
+So I decided to make a simple poker game. Turns out, it didn't end up being so
+simple, and I had glossed over the bullet point suggesting spending no more than
+3 hours on it.
+
+Well, in the end, I didn't finish the game. I had never done anything like this,
+and it was only recently that coding actually 'clicked' for me, so this was
+a new sort of undertaking. But, although the game wasn't finished, this gave me
+a unique opportunity to learn in a way that I had never been asked to in my
+college classes, and the experience, alone, was worth the several hours of my
+Sunday that I put into this framework of a game, and something that I'm grateful for,
+and will continue to pursue, even after this application.
+
+But enough backstory, I'll try and give a rundown of what I have...so far. I wrote
+the program in C, the language I'm most familiar with, and it can be compiled
+in the commandline with the 'make' command. Once it's compiled, simply run it with
+'./poker' and  2 lines of data will show up: the cards in your hand, and the current
+community cards, or the Flop. As of now, each card has a numeric value for both
+the suit and rank, i.e. the numbers/faces. This was solely for the purpose of time;
+I wanted to get the basic framework laid down and then make it pretty with string
+associations, etc.
+
+At the time of this README, I've only heavily relied on 'structs', which on its
+most basic level, establishes an individual card with that card's suit, rank, a
+boolean to decide if it's been dealt or not, and a general card number, used when
+creating the deck. When the program starts, I build the deck, assigning a sequential
+number to each card that has been created (for sanity-check purposes), and then
+I assign their 'dealt' value to false. So now, we have a deck of 52 individual cards,
+comfortably resting in an array of structs called 'deck'.
+
+Once this is done,the player's hand is dealt. The main() calls drawCard() twice.
+The drawCard() function takes the deck as an argument, then chooses a random number
+between 0 and 51, and assigns a new struct to the value of the card in the deck.
+The function then checks to see if that random card in the deck has been dealt.
+If it hasn't, then it assigns all appropriate values and returns the new card into
+the player's hand. Main() then calls this function four more times to establish
+the first round of betting in a poker game.
+
+Here is where I got stuck, and eventually ran out of time. I needed two functions
+to help determine the probabilistic outcome of each players' hand. One function,
+calcHandType() would take in a player's hand and all community cards currently
+on the table. It would then go through each value to determine the type of hand it
+was, e.g. pair, flush, straight. It would then return this value to main(), where
+it would be passed into another function, calcHandVal(), along with the player's
+hand and all community cards. This function would then associate each handType
+to its respective player's hand, and calculate the highest handVal.
+
+I know I just wrote two paragraphs about hypotheticals and ideas, but this project
+was actually very inspiring to me. As I said, I'd never done anything like this,
+or even put so much time into 'thinking' about what I would do for something like
+this. I will continue to work on this, though, and make these hypotheticals into
+reality, but regardless of the outcome of my poker game, I appreciate your time in
+reading this and testing out my work in progress. Cheers.
