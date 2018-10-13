@@ -26,8 +26,8 @@ bool isPalindrome(int num) {
 
     int j = 0;
     int dist = acc - j;
-    while(dist >= 1) {
-        if(dist <= 1) {
+    while(dist >= 0) {
+        if(dist <= 1 && numArray[j] == numArray[acc-1]) {
             palindrome = 1;
             return palindrome; }
         else {
@@ -41,19 +41,17 @@ bool isPalindrome(int num) {
 
 
 int main() {
-    int num1 = 99;
-    int num2 = 99;
-    bool isNotPalindrome = 1;
-    int mult, largestMult;
+    int mult;
+    int largestMult = 0;
 
-    for(num1; num1 > 99; num1--) {
-        for(num2; num2 > 99; num2--) {
+    for(int num1 = 100; num1 <= 999; num1++) {
+        for(int num2 = 100; num2 <= 999; num2++) {
             mult = num1 * num2;
             printf("%d * %d =  %d\n", num1, num2, mult);
 
-            if(isPalindrome(mult)) {
+            if(isPalindrome(mult))
                 if(largestMult < mult)
-                    largestMult = mult; }}}
-
+                    largestMult = mult; }}
+    //printf("Num1: %d Num2: %d Mult: %d\n",num1, num2, mult);
     printf("Largest palindrome: %d\n", largestMult);
     return 0; }

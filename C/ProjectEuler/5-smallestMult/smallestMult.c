@@ -7,20 +7,32 @@ typedef int bool;
 #define false 0
 
 int main() {
-    int acc = 1;
-    int num = 998001;
-    int tempNum = num;
+      bool palindrome = 0;
+      int acc = 1;
+      int tempNum = num;
 
-    while(tempNum > 10) {
-        acc++;
-        tempNum /= 10; }
+      while(tempNum > 10) {
+          acc++;
+          tempNum /= 10; }
 
-    int i = acc-1;
-    int numArray[acc];
-    while(num) {
-        numArray[i] = num % 10;
-        printf("Num: %d in Array: %d\n", numArray[i], i);
-        i--;
-        num /= 10; }
+      int i = acc - 1;
+      int numArray[acc];
+      while(num) {
+          numArray[i] = num % 10;
+          i--;
+          num /= 10; }
 
-    printf("Number of divisions: %d\n", acc); }
+      int j = 0;
+      int dist = acc - j;
+      while(dist >= 1) {
+          if(dist <= 1) {
+              palindrome = 1;
+              return palindrome; }
+          else {
+              if(numArray[j] == numArray[acc-1]) {
+                  j++;
+                  acc--;
+                  dist = (acc - 1) - j; }
+              else break; }}
+
+    return 0; }
