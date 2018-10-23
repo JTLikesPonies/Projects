@@ -6,8 +6,14 @@
  */
 
 #include <stdio.h>
+#include <error.h>
+#include <stdlib.h>
 
 int main() {
-    
+    FILE * file = fopen("/home/jtlikesponies/Documents/Misc/my-resume.pdf", "r");
+    if(file == NULL) perror("Failed to open file");
+    else {
+        printf("File opened successfully\n");
+        fclose(file); }
 
     return 0; }

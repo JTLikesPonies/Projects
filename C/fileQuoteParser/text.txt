@@ -1,0 +1,5 @@
+This is a sample text file. The goal of this
+
+text file is to take each line and enclose it
+
+in quotation marks and a newline.
