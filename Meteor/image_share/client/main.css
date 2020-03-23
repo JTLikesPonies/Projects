@@ -1,0 +1,12 @@
+body {
+  padding-top: 60px;
+  font-family: sans-serif;
+}
+
+.thumbnail {
+	min_height:500px;
+}
+
+.thumbnail-img{
+	max-height:500px;
+}
